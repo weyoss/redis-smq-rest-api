@@ -10,6 +10,7 @@
 import { bodyParser } from '@koa/bodyparser';
 import cors from '@koa/cors';
 import { asValue } from 'awilix';
+import bluebird from 'bluebird';
 import * as http from 'http';
 import Koa from 'koa';
 import mount from 'koa-mount';
@@ -17,7 +18,7 @@ import koaStatic from 'koa-static';
 import { koaSwagger } from 'koa2-swagger-ui';
 import { join } from 'path';
 import { Configuration } from 'redis-smq';
-import temporaryDirectory from 'temp-dir';
+import tmp from 'tmp';
 import { Container } from './src/app/container/Container.js';
 import { resourceMap } from './src/app/router/resource-map.js';
 import { constants } from './src/config/constants.js';
@@ -33,6 +34,8 @@ import {
   saveOpenApiDocument,
 } from './src/lib/openapi-spec/builder.js';
 import { registerResources } from './src/lib/router/index.js';
+
+const tmpAsync = bluebird.promisifyAll(tmp);
 
 export class RedisSmqRestApi {
   protected app;
@@ -83,10 +86,9 @@ export class RedisSmqRestApi {
       this.config.apiServer.basePath,
     );
     const { port, hostname, basePath } = this.config.apiServer;
-    await saveOpenApiDocument(spec, temporaryDirectory);
-    this.app.use(
-      mount(join(basePath, '/assets'), koaStatic(temporaryDirectory)),
-    );
+    const tmpDir = await tmpAsync.dirAsync();
+    await saveOpenApiDocument(spec, tmpDir);
+    this.app.use(mount(join(basePath, '/assets'), koaStatic(tmpDir)));
     const baseURL = `http://${hostname}:${port}${
       basePath === '/' ? '' : basePath
     }`;
