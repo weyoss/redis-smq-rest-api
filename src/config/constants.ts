@@ -14,7 +14,7 @@ const curDir = getDirname();
 const srcDir = resolve(curDir, '../');
 const openApiDocumentFilename = 'openapi-specs.json';
 const tsConfigPath = resolve(process.cwd(), './tsconfig.json');
-const dtoDir = resolve(srcDir, './app/dto');
+const jsonSchemaPath = resolve(process.cwd(), './dist/schema.json');
 const apiServerPort = 7210;
 const apiServerHostname = '127.0.0.1';
 const apiServerBasePath = '/';
@@ -23,7 +23,7 @@ export const constants = {
   srcDir,
   openApiDocumentFilename,
   tsConfigPath,
-  dtoDir,
+  jsonSchemaPath,
   apiServerHostname,
   apiServerPort,
   apiServerBasePath,

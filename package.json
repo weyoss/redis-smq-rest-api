@@ -87,8 +87,9 @@
     "vitest": "1.5.3"
   },
   "scripts": {
+    "schema:gen": "scripts/schema-gen.sh",
     "build": "scripts/build.sh",
-    "test": "vitest",
+    "test": "scripts/test.sh",
     "release": "scripts/release/release.sh",
     "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts'",
     "lint": "eslint \"{src,tests}/**/*.ts\" --fix",

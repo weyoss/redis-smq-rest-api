@@ -7,10 +7,8 @@
  * in the root directory of this source tree.
  */
 
-import { readdirSync } from 'fs';
+import { readFileSync } from 'fs';
 import { JSONSchema7, JSONSchema7Definition } from 'json-schema';
-import { resolve } from 'path';
-import { generateSchema, programFromConfig } from 'typescript-json-schema';
 import { constants } from '../../config/constants.js';
 import { EControllerRequestPayload } from '../controller/types/index.js';
 import { RouterRequestValidationError } from '../router/errors/RouterRequestValidationError.js';
@@ -25,30 +23,12 @@ const payloadSources = [
 ];
 
 export function SchemaGenerator() {
-  const { dtoDir, tsConfigPath } = constants;
-  const files = readdirSync(dtoDir, { recursive: true })
-    .map((i) => resolve(dtoDir, i.toString()))
-    .filter((i) => i.endsWith('.ts'));
-  const program = programFromConfig(tsConfigPath, files);
-  const schema =
-    generateSchema(program, '*', {
-      ref: false,
-      required: true,
-    }) || {};
-  const { definitions = {} } = schema;
-  const defs = Object.keys(definitions).reduce<Record<string, JSONSchema7>>(
-    (acc, cur) => {
-      const def = definitions[cur];
-      if (typeof def !== 'boolean') {
-        acc[cur] = def;
-      }
-      return acc;
-    },
-    {},
-  );
+  const schema = readFileSync(constants.jsonSchemaPath);
+  const { definitions = {} }: JSONSchema7 = JSON.parse(schema.toString());
   const getDefinition = (name: string): JSONSchema7 => {
-    const def = defs[name];
-    if (!def) throw new Error(`Schema ${name} not found.`);
+    const def = definitions[name];
+    if (!def || typeof def === 'boolean')
+      throw new Error(`Schema ${name} not found.`);
     return def;
   };
   const getRequestSchema = (
@@ -139,7 +119,7 @@ export function SchemaGenerator() {
   };
   return {
     getDefinitions() {
-      return defs;
+      return definitions;
     },
     getRequestSchemas(
       controllerName: string,
