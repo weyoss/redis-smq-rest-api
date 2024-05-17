@@ -92,13 +92,14 @@ export class RedisSmqRestApi {
     const baseURL = `http://${hostname}:${port}${
       basePath === '/' ? '' : basePath
     }`;
-    const url = join(baseURL, '/assets/', constants.openApiDocumentFilename);
+    const specsBasePath = join('/assets/', constants.openApiDocumentFilename);
     this.app.use(
       koaSwagger({
-        swaggerOptions: { url },
+        swaggerOptions: { url: specsBasePath },
       }),
     );
-    this.logger.info(`OpenAPI specs are available at ${url}`);
+    const specsURL = join(baseURL, specsBasePath);
+    this.logger.info(`OpenAPI specs are available at ${specsURL}`);
     const docsURL = join(baseURL, '/docs');
     this.logger.info(`SWAGGER UI is accessible from ${docsURL}`);
   }
