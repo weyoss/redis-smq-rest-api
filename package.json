@@ -40,6 +40,7 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
+    "@openapi-contrib/json-schema-to-openapi-schema": "3.0.1",
     "@koa/bodyparser": "5.1.0",
     "@koa/cors": "5.0.0",
     "@koa/router": "12.0.1",
@@ -61,7 +62,6 @@
     "redis-smq": "8.0.0-rc.24"
   },
   "devDependencies": {
-    "@openapi-contrib/json-schema-to-openapi-schema": "3.0.1",
     "@types/bluebird": "3.5.42",
     "@types/koa__cors": "5.0.0",
     "@types/koa__router": "12.0.4",
@@ -70,7 +70,7 @@
     "@types/lodash": "4.14.202",
     "@types/node": "18.19.1",
     "@types/supertest": "6.0.2",
-    "@types/tmp": "^0.2.6",
+    "@types/tmp": "0.2.6",
     "@types/uuid": "9.0.7",
     "@typescript-eslint/eslint-plugin": "6.13.1",
     "@typescript-eslint/parser": "6.13.1",
