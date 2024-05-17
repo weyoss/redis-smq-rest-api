@@ -2,13 +2,15 @@ dist/tests
 dist/examples
 examples
 src/**
-tests/**
+tests
+*.test.*
 .eslintrc.js
+.eslintrc.cjs
 .gitignore
 .npmignore
 .prettierrc
 index.ts
-tsconfig.json
+tsconfig.*
 jest.config.js
 .idea
 types/**
@@ -25,3 +27,4 @@ docker-compose.yml
 scripts/**
 docs/**
 .codecov.yml
+vitest.config.ts
