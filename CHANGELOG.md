@@ -1,5 +1,17 @@
 
 
+## [1.0.0-rc.3](https://github.com/weyoss/redis-smq-rest-api/compare/1.0.0-rc.2...1.0.0-rc.3) (2024-05-17)
+
+
+### Bug Fixes
+
+* fix Swagger UI specs url ([bbe9de4](https://github.com/weyoss/redis-smq-rest-api/commit/bbe9de420df3234bbc44f241bc9a28b4f0ded2de))
+
+
+### Misc
+
+* include CHANGELOG.md into npm package, clean up ([cff6c34](https://github.com/weyoss/redis-smq-rest-api/commit/cff6c344a709f9d5e76da63b6e01a0b368b7e7a6))
+
 ## [1.0.0-rc.2](https://github.com/weyoss/redis-smq-rest-api/compare/1.0.0-rc.1...1.0.0-rc.2) (2024-05-17)
 
 
