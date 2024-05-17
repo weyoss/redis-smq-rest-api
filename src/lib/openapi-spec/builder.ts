@@ -7,9 +7,8 @@
  * in the root directory of this source tree.
  */
 
-import toOpenApiSchema from '@openapi-contrib/json-schema-to-openapi-schema';
 import { writeFile } from 'fs/promises';
-import { JSONSchema7 } from 'json-schema';
+import { JSONSchema4, JSONSchema7 } from 'json-schema';
 import { OpenAPIV3 } from 'openapi-types';
 import { resolve } from 'path';
 import { constants } from '../../config/constants.js';
@@ -18,6 +17,17 @@ import { TRouterResourceMap } from '../router/types/index.js';
 import { SchemaGenerator } from '../validator/schema-generator.js';
 import { getOpenApiRoutes } from './adaptor.js';
 import { IOpenApiRouteParams } from './types/index.js';
+
+// Using dynamic import instead of 'import ... from ...' to fix CJS module error:
+// TypeError: json_schema_to_openapi_schema_1.default.default is not a function
+async function toOpenAPISchema<T extends object = JSONSchema4>(
+  schema: T,
+): Promise<OpenAPIV3.Document> {
+  const { default: toOpenApiSchema } = await import(
+    '@openapi-contrib/json-schema-to-openapi-schema'
+  );
+  return toOpenApiSchema.default(schema);
+}
 
 async function getRequestParameters(
   schema: JSONSchema7,
@@ -44,7 +54,7 @@ async function getRequestParameters(
           in:
             payloadSource === EControllerRequestPayload.PATH ? 'path' : 'query',
           required: schema.required?.includes(property) || false,
-          schema: await toOpenApiSchema.default(propSchema),
+          schema: await toOpenAPISchema(propSchema),
           description,
         };
         parameters.push(param);
@@ -69,7 +79,7 @@ async function getRequestBody(
     return {
       required: true,
       content: {
-        [contentType]: { schema: await toOpenApiSchema.default(schema) },
+        [contentType]: { schema: await toOpenAPISchema(schema) },
       },
     };
   }
@@ -84,7 +94,7 @@ async function getResponses(schemaMap: [number, JSONSchema7][]) {
       description: '',
       content: {
         'application/json': {
-          schema: await toOpenApiSchema.default(schema),
+          schema: await toOpenAPISchema(schema),
         },
       },
     };
