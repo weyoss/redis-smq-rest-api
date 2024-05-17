@@ -22,9 +22,8 @@ misc/**/*
 tsconfig.tsbuildinfo
 logo.png
 .husky
-CHANGELOG.md
 docker-compose.yml
 scripts/**
 docs/**
 .codecov.yml
-vitest.config.ts
+vitest*
