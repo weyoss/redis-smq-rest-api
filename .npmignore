@@ -27,3 +27,4 @@ scripts/**
 docs/**
 .codecov.yml
 vitest*
+package-lock.json
