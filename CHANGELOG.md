@@ -1,5 +1,14 @@
 
 
+## [1.0.0-rc.4](https://github.com/weyoss/redis-smq-rest-api/compare/1.0.0-rc.3...1.0.0-rc.4) (2024-05-18)
+
+
+### Bug Fixes
+
+* exclude package-lock.json to support different platform arch ([48ee33b](https://github.com/weyoss/redis-smq-rest-api/commit/48ee33b99684161ddd78612ae9ad27fed997a4d4))
+* **github-ci:** fix dependencies installation error due to missing lock file ([da5e462](https://github.com/weyoss/redis-smq-rest-api/commit/da5e462323b670063fa37a1267c6df0196a79436))
+* **json-schema:** create required array for non-optional properties ([84bc2fb](https://github.com/weyoss/redis-smq-rest-api/commit/84bc2fb8de863368605a17faa9eea01283adb1f6))
+
 ## [1.0.0-rc.3](https://github.com/weyoss/redis-smq-rest-api/compare/1.0.0-rc.2...1.0.0-rc.3) (2024-05-17)
 
 
