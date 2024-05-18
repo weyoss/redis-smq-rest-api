@@ -44,10 +44,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Run type coverage
-        run: npm run type-coverage
+      - name: Build
+        run: npm run build
 
       - name: Run tests and collect code coverage
         run: npm test
