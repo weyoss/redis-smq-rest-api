@@ -9,4 +9,4 @@
 set -x
 set -e
 
-typescript-json-schema "./tsconfig.schema.json" "*" --out "dist/schema.json" --refs false
+typescript-json-schema "./tsconfig.schema.json" "*" --out "dist/schema.json" --refs false --required true
