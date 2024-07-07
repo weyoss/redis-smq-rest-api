@@ -9,7 +9,7 @@
 
 import { readFileSync } from 'fs';
 import { JSONSchema7, JSONSchema7Definition } from 'json-schema';
-import { constants } from '../../config/constants.js';
+import { constants } from '../../app/api/constants.js';
 import { EControllerRequestPayload } from '../controller/types/index.js';
 import { RouterRequestValidationError } from '../router/errors/RouterRequestValidationError.js';
 import { RouterResponseValidationError } from '../router/errors/RouterResponseValidationError.js';

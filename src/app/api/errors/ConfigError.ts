@@ -7,6 +7,6 @@
  * in the root directory of this source tree.
  */
 
-import { RedisSmqRestApiError } from '../../lib/errors/errors/RedisSmqRestApiError.js';
+import { RedisSmqRestApiError } from '../../../lib/errors/errors/RedisSmqRestApiError.js';
 
 export class ConfigError extends RedisSmqRestApiError {}

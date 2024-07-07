@@ -11,7 +11,7 @@ import { writeFile } from 'fs/promises';
 import { JSONSchema4, JSONSchema7 } from 'json-schema';
 import { OpenAPIV3 } from 'openapi-types';
 import { resolve } from 'path';
-import { constants } from '../../config/constants.js';
+import { constants } from '../../app/api/constants.js';
 import { EControllerRequestPayload } from '../controller/types/index.js';
 import { TRouterResourceMap } from '../router/types/index.js';
 import { SchemaGenerator } from '../validator/schema-generator.js';

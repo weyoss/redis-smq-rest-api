@@ -40,10 +40,10 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@openapi-contrib/json-schema-to-openapi-schema": "3.0.1",
     "@koa/bodyparser": "5.1.0",
     "@koa/cors": "5.0.0",
     "@koa/router": "12.0.1",
+    "@openapi-contrib/json-schema-to-openapi-schema": "3.0.1",
     "@types/bunyan": "1.8.11",
     "ajv": "8.13.0",
     "awilix": "9.0.0",
@@ -59,7 +59,8 @@
     "uuid": "9.0.1"
   },
   "peerDependencies": {
-    "redis-smq": "8.0.0-rc.24"
+    "redis-smq": "8.0.0-rc.25",
+    "redis-smq-common": "3.0.0-rc.15"
   },
   "devDependencies": {
     "@types/bluebird": "3.5.42",

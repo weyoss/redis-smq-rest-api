@@ -8,7 +8,7 @@
  */
 
 import { ERedisConfigClient } from 'redis-smq-common';
-import { IRedisSMQHttpApiConfig } from '../../src/config/types/index.js';
+import { IRedisSMQHttpApiConfig } from '../../src/app/api/index.js';
 
 export const config: IRedisSMQHttpApiConfig = {
   redis: {

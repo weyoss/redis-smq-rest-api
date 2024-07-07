@@ -22,7 +22,7 @@ import {
   QueueScheduledMessages,
 } from 'redis-smq';
 import { ILogger } from 'redis-smq-common';
-import { IRedisSMQHttpApiParsedConfig } from '../../../config/types/index.js';
+import { IRedisSMQHttpApiParsedConfig } from '../../api/index.js';
 import { ConsumerGroupsService } from '../../services/ConsumerGroupsService.js';
 import { ExchangeFanOutService } from '../../services/ExchangeFanOutService.js';
 import { MessagesService } from '../../services/MessagesService.js';

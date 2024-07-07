@@ -9,18 +9,18 @@
 
 import { IRedisSMQConfig } from 'redis-smq';
 
-export type THttpApiConfig = {
+export interface IApiServerConfig {
   port?: number;
   hostname?: string;
   basePath?: string;
-};
+}
 
 export interface IRedisSMQHttpApiConfig extends IRedisSMQConfig {
-  apiServer?: THttpApiConfig;
+  apiServer?: IApiServerConfig;
 }
 export type IRedisSMQHttpApiParsedConfig = Omit<
   IRedisSMQHttpApiConfig,
   'apiServer'
 > & {
-  apiServer: Required<THttpApiConfig>;
+  apiServer: Required<IApiServerConfig>;
 };

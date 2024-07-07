@@ -8,13 +8,13 @@
  */
 
 import { URL } from 'url';
-import { constants } from './constants.js';
-import { ConfigInvalidApiServerParamsError } from './errors/ConfigInvalidApiServerParamsError.js';
 import {
+  IApiServerConfig,
   IRedisSMQHttpApiConfig,
   IRedisSMQHttpApiParsedConfig,
-  THttpApiConfig,
 } from './types/index.js';
+import { constants } from './constants.js';
+import { ConfigInvalidApiServerParamsError } from './errors/ConfigInvalidApiServerParamsError.js';
 
 function normalizePath(path: string) {
   const s = path
@@ -26,7 +26,7 @@ function normalizePath(path: string) {
 }
 
 function validateURL(
-  apiServer: THttpApiConfig,
+  apiServer: IApiServerConfig,
 ): [string, number, string] | Error {
   const {
     hostname = constants.apiServerHostname,

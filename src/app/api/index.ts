@@ -7,4 +7,5 @@
  * in the root directory of this source tree.
  */
 
-export * from './src/app/api/index.js';
+export * from './types/index.js';
+export * from './RedisSMQRestApi.js';

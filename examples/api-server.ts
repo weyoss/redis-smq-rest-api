@@ -7,7 +7,7 @@
  * in the root directory of this source tree.
  */
 
-import { RedisSmqRestApi } from '../index.js';
+import { RedisSMQRestApi } from '../src/app/api/RedisSMQRestApi.js';
 
-const restApiServer = new RedisSmqRestApi({ logger: { enabled: true } });
+const restApiServer = new RedisSMQRestApi({ logger: { enabled: true } });
 restApiServer.run();
