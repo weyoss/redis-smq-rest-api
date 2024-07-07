@@ -11,4 +11,4 @@ set -x
 set -e
 
 npm run schema:gen
-vitest
+vitest "$@"
