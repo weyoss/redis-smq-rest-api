@@ -38,14 +38,14 @@ The REST API configuration extends [RedisSMQ Configuration](https://github.com/w
 while adding the API server configuration.
 
 ```typescript
-export type THttpApiConfig = {
+interface IApiServerConfig {
   port?: number;
-  host?: string;
+  hostname?: string;
   basePath?: string;
-};
+}
 
-export interface IRedisSMQHttpApiConfig extends IRedisSMQConfig {
-  apiServer?: THttpApiConfig;
+interface IRedisSMQHttpApiConfig extends IRedisSMQConfig {
+  apiServer?: IApiServerConfig;
 }
 ```
 
