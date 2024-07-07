@@ -1,5 +1,19 @@
 
 
+## [1.0.0-rc.5](https://github.com/weyoss/redis-smq-rest-api/compare/1.0.0-rc.4...1.0.0-rc.5) (2024-07-07)
+
+
+### Bug Fixes
+
+* export typings, add redis-smq-common as a peer-dependency ([aac8899](https://github.com/weyoss/redis-smq-rest-api/commit/aac8899132cfa46aa1deddac9927e8f9a1a82fe5))
+* fix broken imports ([20f3231](https://github.com/weyoss/redis-smq-rest-api/commit/20f3231aa2e8bd0a3d0e65d4f6096d2904e33627))
+* forward args to vitest ([43496bd](https://github.com/weyoss/redis-smq-rest-api/commit/43496bdab3509902d8169819b810ca7127070b39))
+
+
+### Documentation
+
+* **README:** update configuration reference ([7f23336](https://github.com/weyoss/redis-smq-rest-api/commit/7f2333692494927bb2a68c0a1432dd1fa7e3d224))
+
 ## [1.0.0-rc.4](https://github.com/weyoss/redis-smq-rest-api/compare/1.0.0-rc.3...1.0.0-rc.4) (2024-05-18)
 
 
