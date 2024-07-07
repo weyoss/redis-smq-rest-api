@@ -11,7 +11,7 @@ import { resolve } from 'path';
 import { getDirname } from 'redis-smq-common';
 
 const curDir = getDirname();
-const srcDir = resolve(curDir, '../');
+const srcDir = resolve(curDir, '../../');
 const rootDir =
   resolve(srcDir, '../').split('/').pop() === 'redis-smq-rest-api'
     ? resolve(srcDir, '../')

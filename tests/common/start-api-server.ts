@@ -7,7 +7,7 @@
  * in the root directory of this source tree.
  */
 
-import { RedisSMQRestApi } from '../../src/app/api/RedisSMQRestApi.js';
+import { RedisSMQRestApi } from '../../src/app/api/index.js';
 import { config } from './config.js';
 
 const server = new RedisSMQRestApi(config);

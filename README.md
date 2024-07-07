@@ -52,7 +52,7 @@ interface IRedisSMQHttpApiConfig extends IRedisSMQConfig {
 ## Usage
 
 ```typescript
-import { RedisSmqRestApi } from 'redis-smq-rest-api';
+import { IRedisSMQHttpApiConfig, RedisSMQRestApi } from 'redis-smq-rest-api';
 
 const config: IRedisSMQHttpApiConfig = {
     redis: {
@@ -68,7 +68,7 @@ const config: IRedisSMQHttpApiConfig = {
     }
 };
 
-const apiServer = new RedisSmqRestApi(config);
+const apiServer = new RedisSMQRestApi(config);
 apiServer.run();
 ```
 
