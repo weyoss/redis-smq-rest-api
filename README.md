@@ -1,13 +1,17 @@
 <div align="center" style="text-align: center">
     <p><a href="https://github.com/weyoss/redis-smq-rest-api"><img alt="RedisSMQ" src="./logo.png?v=202312182134" /></a></p>
     <p>A RESTful API for RedisSMQ</p>
-    <p>
-       <a href="https://github.com/weyoss/redis-smq-rest-api/actions/workflows/tests.yml"><img src="https://github.com/weyoss/redis-smq-rest-api/actions/workflows/tests.yml/badge.svg" alt="Tests" style="max-width:100%;" /></a>
-       <a href="https://github.com/weyoss/redis-smq-rest-api/actions/workflows/codeql.yml" rel="nofollow"><img src="https://github.com/weyoss/redis-smq-rest-api/actions/workflows/codeql.yml/badge.svg" alt="Code quality" /></a>
-       <a href="https://codecov.io/github/weyoss/redis-smq-rest-api?branch=master" rel="nofollow"><img src="https://img.shields.io/codecov/c/github/weyoss/redis-smq-rest-api" alt="Coverage Status" /></a>
-       <a href="https://npmjs.org/package/redis-smq-rest-api" rel="nofollow"><img src="https://img.shields.io/npm/v/redis-smq-rest-api.svg" alt="NPM version" /></a>
-    </p>
 </div>
+
+> **Important Notice**
+>
+> This repository has been archived and is no longer maintained. The RedisSMQ Monitor functionality has been moved to the main [redis-smq repository](https://github.com/weyoss/redis-smq). Please refer to the main repository for the latest updates and documentation.
+>
+> **What this means:**
+>
+> - No further issues or pull requests will be accepted in this repository
+> - All future updates and improvements will be made in the main redis-smq repository
+> - Please direct all questions and contributions to the main repository
 
 # RedisSMQ REST API
 
